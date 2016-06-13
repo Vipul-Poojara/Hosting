@@ -46,7 +46,7 @@ namespace Microsoft.AspNetCore.Server.Testing
                 var response = RetryHelper.RetryRequest(() =>
                 {
                     return httpClient.GetAsync(redirectUri);
-                }, Logger).Result;
+                }, Logger, exitToken).Result;
 
                 if (!response.IsSuccessStatusCode)
                 {
